@@ -1,3 +1,4 @@
+# import the dependencies
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -8,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Configure the database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:anish2803@localhost:5432/Coffee_Dataset_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@localhost:5432/Coffee_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
@@ -18,50 +19,61 @@ db = SQLAlchemy(app)
 
 # Define Customers model
 class Customers (db.Model):
-    __tablename__ = 'customers'
+    __tablename__ = 'Customers'
 
-    customer_id = db.Column(db.String(20), primary_key = True)
-    customer_name = db.Column(db.String(100))
-    email = db.Column(db.String(100))
-    phone_number = db.Column(db.String(30))
-    address_line1 = db.Column(db.String(100))
-    city = db.Column(db.String(50))
-    country =db.Column(db.String(50))
-    postal_code = db.Column(db.String(20))
-    loyalty_card = db.Column(db.String(20))
+    Customer_ID = db.Column(db.String(100), primary_key = True)
+    Customer_Name = db.Column(db.String(256))
+    Email = db.Column(db.String(256))
+    Phone_Number = db.Column(db.String(50))
+    Address_Line_1 = db.Column(db.String(256))
+    City = db.Column(db.String(128))
+    Country =db.Column(db.String(126))
+    Postcode = db.Column(db.String(10))
+    Loyalty_Card = db.Column(db.String(20))
     orders = db.relationship('Order', backref='customer', lazy=True)
 
 # Define the Products model
 class Products(db.Model):
-    __tablename__ = 'products'
+    __tablename__ = 'Products'
 
-    product_id = db.Column(db.String(10), primary_key=True)
-    coffee_type = db.Column(db.String(3))
-    roast_type = db.Column(db.String(1))
-    size = db.Column(db.Float(4))
-    unit_price = db.Column(db.Float(20))
-    price_per_100g = db.Column(db.Float(20))
-    profit = db.Column(db.Float(20))
+    Product_ID = db.Column(db.String(30), primary_key=True)
+    Coffee_Type = db.Column(db.String(3))
+    Roast_Type = db.Column(db.String(1))
+    Size = db.Column(db.Float(5))
+    Unit_Price = db.Column(db.Float(20))
+    Price_per_100GRM = db.Column(db.Float(20))
+    Profit = db.Column(db.Float(30))
 
     def as_dict(self):
         return {column.name: getattr(self, column.name) for column in self.__table__.columns}
 
 
+# Define the Order model
 class Order(db.Model):
-    __tablename__ = 'orders'
-    order_id = db.Column(db.String(15), primary_key=True)
-    order_date = db.Column(db.Date, default=datetime.utcnow)
-    customer_id = db.Column(db.String(20), db.ForeignKey('customers.customer_id'), nullable=False)
-    product_id = db.Column(db.String(10), db.ForeignKey('products.product_id'), nullable=False)
-    quantity = db.Column(db.Float)
+    __tablename__ = 'Orders'
+
+    Order_ID = db.Column(db.String(30), primary_key=True)
+    Order_Date = db.Column(db.Date, default=datetime.utcnow)
+    Customer_ID = db.Column(db.String(50), db.ForeignKey('Customers.Customer_ID'), nullable=False)
+
+# Define the Order_Items model
+class Order_Items(db.Model):
+    __tablename__ = 'Order_Items'
+
+    Order_ID = db.Column(db.String(30), db.ForeignKey('Orders.Order_ID'), primary_key=True)
+    Product_ID = db.Column(db.String(30), db.ForeignKey('Products.Product_ID'), primary_key=True)
+    Unit_Price = db.Column(db.Float(20))
+    Quantity = db.Column(db.Float)
+    Sale_Amount = db.Column(db.Float(30))
+
+    order = db.relationship('Order', backref='order_items')
+    product = db.relationship('Products', backref='order_items')
 
     __table_args__ = (
-        db.UniqueConstraint('order_id', 'product_id', name='unique_order_product'),
+        db.UniqueConstraint('Order_ID', 'Product_ID', name='unique_order_product'),
     )
 
-
-
-# Create a route to fetch and return the data as JSON
+# Route to fetch products data
 @app.route('/products', methods=['GET'])
 def get_products():
     products = Products.query.all()
@@ -69,15 +81,16 @@ def get_products():
     return jsonify(products_json)
 
 
-
-
-   # Inside your Flask route or function
+# Route for the complete order details
 @app.route('/get_order_data')
 def get_order_data():
     with app.app_context():
-        data = db.session.query(Order.order_id, Order.order_date, Customers.customer_id, Customers.customer_name, Customers.email,
-                               Customers.city,Customers.country,Customers.postal_code, Customers.loyalty_card,Products.coffee_type, Products.roast_type, Products.size, Order.quantity). \
-            join(Customers).join(Products).all()
+        data = db.session.query(Order.Order_ID, Order.Order_Date, Customers.Customer_ID, Customers.Customer_Name, Customers.Email,
+                               Customers.City,Customers.Country,Customers.Postcode, Customers.Loyalty_Card,Products.Coffee_Type, Products.Roast_Type, Products.Size,Products.Profit, Order_Items.Quantity, Order_Items.Product_ID,Products.Unit_Price). \
+            join(Customers, Order.Customer_ID == Customers.Customer_ID). \
+join(Order_Items, Order.Order_ID == Order_Items.Order_ID). \
+join(Products, Order_Items.Product_ID == Products.Product_ID). \
+filter(Customers.Country == 'United States').all()
 
         result = []
         for row in data:
@@ -94,7 +107,11 @@ def get_order_data():
                 'coffee_type': row[9],
                 'roast_type': row[10],
                 'size': row[11],
-                'quantity': row[12]
+                'profit':row[12],
+                'quantity': row[13],
+                'product_id': row[14],
+                'unit_price': row[15]
+                
             })
 
         return jsonify(result)
