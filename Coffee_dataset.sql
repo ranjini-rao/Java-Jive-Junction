@@ -13,7 +13,7 @@ CREATE TABLE countries (
 DROP TABLE IF EXISTS coffee_consumption;
 
 CREATE TABLE coffee_consumption (
-    Country VARCHAR(255) REFERENCES countries(Country) NOT NULL,
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
     Coffee_Type VARCHAR(255) NOT NULL,
     Year_1990 NUMERIC,
     Year_1991 NUMERIC,
@@ -51,7 +51,7 @@ CREATE TABLE coffee_consumption (
 DROP TABLE IF EXISTS coffee_exporters;
 
 CREATE TABLE coffee_exporters (
-    Country VARCHAR(255) REFERENCES countries(Country) NOT NULL,
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
     Year_1990 NUMERIC,
     Year_1991 NUMERIC,
 	Year_1992 NUMERIC,
@@ -88,7 +88,7 @@ CREATE TABLE coffee_exporters (
 DROP TABLE IF EXISTS coffee_green_inventory;
 
 CREATE TABLE coffee_green_inventory (
-    Country VARCHAR(255) REFERENCES countries(Country) NOT NULL,
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
     Year_1990 NUMERIC,
     Year_1991 NUMERIC,
 	Year_1992 NUMERIC,
@@ -125,7 +125,7 @@ CREATE TABLE coffee_green_inventory (
 DROP TABLE IF EXISTS coffee_importers;
 
 CREATE TABLE coffee_importers (
-    Country VARCHAR(255) REFERENCES countries(Country) NOT NULL,
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
     Year_1990 NUMERIC,
     Year_1991 NUMERIC,
 	Year_1992 NUMERIC,
@@ -162,7 +162,7 @@ CREATE TABLE coffee_importers (
 DROP TABLE IF EXISTS coffee_importers_consumption;
 
 CREATE TABLE coffee_importers_consumption (
-    Country VARCHAR(255) REFERENCES countries(Country) NOT NULL,
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
     Year_1990 NUMERIC,
     Year_1991 NUMERIC,
 	Year_1992 NUMERIC,
@@ -199,7 +199,7 @@ CREATE TABLE coffee_importers_consumption (
 DROP TABLE IF EXISTS coffee_production;
 
 CREATE TABLE coffee_production (
-    Country VARCHAR(255) REFERENCES countries(Country) NOT NULL,
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
     Coffee_Type VARCHAR(255) NOT NULL,
 	Year_1990 NUMERIC,
     Year_1991 NUMERIC,
@@ -237,7 +237,7 @@ CREATE TABLE coffee_production (
 DROP TABLE IF EXISTS coffee_re_exported;
 
 CREATE TABLE coffee_re_exported (
-    Country VARCHAR(255) REFERENCES countries(Country) NOT NULL,
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
     Year_1990 NUMERIC,
     Year_1991 NUMERIC,
 	Year_1992 NUMERIC,
