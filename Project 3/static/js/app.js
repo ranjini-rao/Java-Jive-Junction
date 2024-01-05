@@ -122,10 +122,10 @@ function createMapChart(type, year) {
     map_data = getMapData(data);
 
     //clean previous displayed map.
-    d3.select("#bubble").text("");
+    d3.select("#map").text("");
 
     //create new map.
-    $('#bubble').vectorMap({
+    $('#map').vectorMap({
       map: 'world_mill',
       series: {
         regions: [{
