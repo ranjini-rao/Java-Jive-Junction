@@ -4,11 +4,12 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+from flask_cors import CORS, cross_origin
 import json
 #from sqlalchemy.sql import text
 
 # Database connection
-alchemyEngine = create_engine('postgresql+psycopg2://postgres:pallavi@localhost:5432/Coffee_db', connect_args={'connect_timeout': 100}); 
+alchemyEngine = create_engine('postgresql+psycopg2://postgres:pallavi@localhost:5432/Coffee_db', pool_size=20, max_overflow=0); 
 
 # reflect an existing database into a new model
 base = automap_base()
@@ -27,9 +28,12 @@ coffee_countries = base.classes.countries
 
 # Create an app, being sure to pass __name__
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Flask route
 @app.route('/get_country_codes')
+@cross_origin()
 def country_codes():
     f = open('./static/js/country-code.json')
     
@@ -43,6 +47,7 @@ def country_codes():
 
 
 @app.route('/get_all_years')
+@cross_origin()
 def all_years():
 
     years = [];
@@ -52,6 +57,7 @@ def all_years():
     return jsonify(years);
 
 @app.route('/get_all_data_types')
+@cross_origin()
 def all_types():
 
     types = [];
@@ -63,6 +69,7 @@ def all_types():
     return jsonify(types);
 
 @app.route('/get_all_countries')
+@cross_origin()
 def countries():
 
     # Create our session (link) from Python to the DB
@@ -80,6 +87,7 @@ def countries():
     return jsonify(dict);
 
 @app.route('/get_export_data')
+@cross_origin()
 def coffee_export():
     
     # Create our session (link) from Python to the DB
@@ -193,6 +201,7 @@ def coffee_export():
     return jsonify(dict)
 
 @app.route('/get_import_data')
+@cross_origin()
 def coffee_import():
     
     # Create our session (link) from Python to the DB
@@ -305,6 +314,7 @@ def coffee_import():
     return jsonify(dict)
 
 @app.route('/get_consumption_data')
+@cross_origin()
 def coffee_consumption_data():
     # Create our session (link) from Python to the DB
     session = Session(alchemyEngine)
@@ -420,6 +430,7 @@ def coffee_consumption_data():
     return jsonify(dict)
 
 @app.route('/get_production_data')
+@cross_origin()
 def coffee_production_data():
     # Create our session (link) from Python to the DB
     session = Session(alchemyEngine)

@@ -1,11 +1,11 @@
 //Define all api urls to be used to fetch data
-const url_years = "http://127.0.0.1:5000/get_all_years";
-const url_data_types = "http://127.0.0.1:5000/get_all_data_types";
-const url_production = "http://127.0.0.1:5000/get_production_data";
-const url_consumption = "http://127.0.0.1:5000/get_consumption_data";
-const url_import = "http://127.0.0.1:5000/get_import_data";
-const url_export = "http://127.0.0.1:5000/get_export_data";
-const url_country_codes = "http://127.0.0.1:5000/get_country_codes";
+const url_years = "http://127.0.0.1:5001/get_all_years";
+const url_data_types = "http://127.0.0.1:5001/get_all_data_types";
+const url_production = "http://127.0.0.1:5001/get_production_data";
+const url_consumption = "http://127.0.0.1:5001/get_consumption_data";
+const url_import = "http://127.0.0.1:5001/get_import_data";
+const url_export = "http://127.0.0.1:5001/get_export_data";
+const url_country_codes = "http://127.0.0.1:5001/get_country_codes";
 
 
 //Global variables to be populated and used in the functions.
@@ -198,7 +198,7 @@ function createBar(type, year) {
     };
 
     let layout = {
-        height: 400,
+        height: 500,
         width: 700,
         yaxis: {
             title: 'Kilograms'
