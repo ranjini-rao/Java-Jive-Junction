@@ -122,7 +122,14 @@ function createMapChart(type, year) {
     map_data = getMapData(data);
 
     //clean previous displayed map.
+    d3.select("#map-heading").text("");
     d3.select("#map").text("");
+
+    //Write new heading for map
+    var mapHeadingDiv = document.querySelector('#map-heading');
+    var h3 = document.createElement('h3');
+    h3.textContent = 'Coffee ' + type + ' all over the world in the year ' + year;
+    mapHeadingDiv.appendChild(h3);
 
     //create new map.
     $('#map').vectorMap({
@@ -193,13 +200,14 @@ function createBar(type, year) {
     let layout = {
         height: 400,
         width: 700,
-        xaxis: {
-            title: 'Countries'
-        },
         yaxis: {
             title: 'Kilograms'
         },
-        title: 'Top 10 countries in ' + type,
+        title: 'Top 10 countries in coffee ' + type + ' in year ' + year,
+        font: {
+            family: 'Tahoma',
+            size: 15,
+        }
     }   
 
     let plot_data = [trace];
