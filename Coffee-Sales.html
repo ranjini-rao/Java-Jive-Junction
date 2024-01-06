@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Coffee Quality</title>
+  <title>Coffee Sales</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://unpkg.com/c3@0.4.22/c3.min.css">
 
@@ -31,8 +31,18 @@
     </div> 
 
     <div class="row">
-      <div style="height: 200px;"></div>
+      <div style="height: 100px;"></div>
     </div>
+
+    <div class="row">
+          <h5>Select Year:</h5>
+          <select id="selDataset1" onchange="optionChanged()">
+            <option value="2019">2019</option> 
+            <option value="2020">2020</option> 
+            <option value="2021">2021</option> 
+            <option value="2022">2022</option> 
+          </select>
+        </div>
 
     <div class="row">
       <div class="col-md-12">

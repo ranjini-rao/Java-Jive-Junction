@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coffee Price</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/c3@0.4.22/c3.min.css">
+</head>
+
+<body>
+  <header style="text-align: center;">
+  <nav>
+    <a href="index.html">Home</a> 
+</nav>
+</header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style ="background-image: url('https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlJTIwYmVhbnN8ZW58MHx8MHx8fDA%3D');">
+        <h1 style="color: aliceblue;">Coffee Bean Price Canvas</h1>
+        <p style = "color: aliceblue;">Use the interactive charts below to explore the coffee prices</p>
+      </div>
+    </div>
+    <!-- style="background-color: rgb(237,187,153);" -->
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Select Coffee Type:</h5>
+          <select id="selDataset1" onchange="optionChanged()"></select>
+          <h5>Select Roast Type:</h5>
+          <select id="selDataset2" onchange="optionChanged()"></select>
+        </div>
+        
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Coffee Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+
+      </div>
+      <div class="col-md-8">
+        <div style = "height: 100px;"></div>
+        <div id="chartContainer"></div>
+      </div>
+    </div>
+    <div class="row" style="height:50px">
+    </div>
+
+    <div class="row" >
+      <div class="col-md-10"> 
+        <div style = "height: 100px;"></div>
+        <div id="profitbarchartContainer"></div>
+     </div>
+    </div>
+
+    <div class="row">
+    <div style="height: 200px;"></div>
+    <div class="col-md-10">
+      <div id="chart-container"></div>
+    </div>
+  </div>
+ </div>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://unpkg.com/c3@0.7.20/c3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="logic.js"></script> 
+ 
+</body>
+
+</html>
