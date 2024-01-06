@@ -30,7 +30,6 @@ function init(){
             newOption.text(roast_type[i]);    
         }
 
-
         // Selected coffee type and roast type
         let sel_coffee_type = idDropDown1.property("value");
         let sel_roast_type = idDropDown2.property("value");
@@ -38,7 +37,7 @@ function init(){
         // Call function to display coffee information
         showCoffeeInfo(sel_coffee_type);
         // Call function to plot the price chart for selected coffee type and roast type
-        barPlot(sel_coffee_type,sel_roast_type);    
+        barPlot(sel_coffee_type,sel_roast_type);   
            
       })
       .catch(error => console.error('Error fetching data:', error))
@@ -66,7 +65,6 @@ function barPlot(sel_coffee_type,sel_roast_type){
   }
              
   var chartContainer = document.getElementById("chartContainer");
-
   // Define x-values and y-values for he plot
   var xValues = size;
   var yValues = price;
@@ -121,21 +119,18 @@ function barPlot(sel_coffee_type,sel_roast_type){
 
 // Funciton to display coffee type information
 function showCoffeeInfo(sel_coffee_type){
-   
+    // set it to empty string
     d3.select("#sample-metadata").html("");
-
+    // For the slected coffee type, assign the information 
     let selectedId =   sel_coffee_type.substring(0,3);
     if (selectedId === 'Ara'){
       coffee_info = "Coffea arabica, also known as the Arabica coffee, is a species of flowering plant in the coffee and madder family Rubiaceae. It is believed to be the first species of coffee to have been cultivated and is currently the dominant cultivar, representing about 60% of global production" 
-
     }
     else if (selectedId === 'Rob'){
       coffee_info = "Robusta coffee bean is a species coming from the Coffea canephore plant. Its production amounts to around 30% of the world's total production, which in fact makes it the second most popular variety. Its typical features are a strong and harsh, yet deep flavor, given by a high caffeine content."
-
     }
     else if (selectedId === 'Lib'){
       coffee_info = "Coffea liberica, commonly known as the Liberian coffee, is a species of flowering plant in the family Rubiaceae from which coffee is produced. It is native to western and central Africa, and has become naturalised in areas including Colombia, Venezuela, the Philippines, Borneo and Java."
-
     }
     else if (selectedId === 'Exc'){
       coffee_info = "Excelsa coffee is known for its unique and complex flavor profile.It often exhibits fruity, floral, and spicy notes with a distinct and bold taste.The flavor can vary, but it is generally more robust and with a larger body compared to Arabica."
@@ -146,23 +141,13 @@ function showCoffeeInfo(sel_coffee_type){
 
 // Function executed on option change
 function optionChanged() { 
-
+  // read the selected optons for coffee type and roast type
   let idDropDown1 = d3.select("#selDataset1");
-
   let idDropDown2 = d3.select("#selDataset2");
-
   let sel_coffee_type = idDropDown1.property("value");
   let sel_roast_type = idDropDown2.property("value");
-
 
   // Call all functions 
   showCoffeeInfo(sel_coffee_type);
   barPlot(sel_coffee_type,sel_roast_type);
 };
-
-
-    
-
- 
- 
-
