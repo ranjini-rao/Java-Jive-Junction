@@ -6,7 +6,6 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from flask_cors import CORS, cross_origin
 import json
-#from sqlalchemy.sql import text
 
 # Database connection
 alchemyEngine = create_engine('postgresql+psycopg2://postgres:pallavi@localhost:5432/Coffee_db', pool_size=20, max_overflow=0); 
@@ -61,10 +60,10 @@ def all_years():
 def all_types():
 
     types = [];
-    types.append("production")
-    types.append("consumption")
-    types.append("export")
-    types.append("import")
+    types.append("Production")
+    types.append("Consumption")
+    types.append("Export")
+    types.append("Import")
 
     return jsonify(types);
 

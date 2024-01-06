@@ -38,9 +38,9 @@ d3.json(url_data_types).then(function(data) {
     }
 });
 
-////fetch country codes.
+//fetch country codes.
 d3.json(url_country_codes).then(function(data) {
-    country_code = data;
+    country_codes = data;
 });
 
 //fetch consumption data
@@ -104,16 +104,16 @@ function createMapChart(type, year) {
 
     //fetch required data to be displayed depending on type selected.
     let data = {};
-    if (type === "production") {
+    if (type === "Production") {
         data = production_data[year];
         console.log(data);
-    } else if (type === "consumption") {
+    } else if (type === "Consumption") {
         data = consumption_data[year];
         console.log(data);
-    } else if (type === "import") {
+    } else if (type === "Import") {
         data = import_data[year];
         console.log(data);
-    } else if (type === "export") {
+    } else if (type === "Export") {
         data = export_data[year];
         console.log(data);
     }
@@ -152,7 +152,7 @@ function getMapData(data) {
     let finalData = {};
 
     for (const [key, value] of Object.entries(data)) {
-        let countryKey = country_code[key];
+        let countryKey = country_codes[key];
         if (countryKey == null || countryKey === null) {
             console.log("Not found:" + key);
         }
@@ -164,16 +164,16 @@ function getMapData(data) {
 //Create bar graph
 function createBar(type, year) {
     let data = {};
-    if (type === "production") {
+    if (type === "Production") {
         data = production_data[year];
         console.log(data);
-    } else if (type === "consumption") {
+    } else if (type === "Consumption") {
         data = consumption_data[year];
         console.log(data);
-    } else if (type === "import") {
+    } else if (type === "Import") {
         data = import_data[year];
         console.log(data);
-    } else if (type === "export") {
+    } else if (type === "Export") {
         data = export_data[year];
         console.log(data);
     }
