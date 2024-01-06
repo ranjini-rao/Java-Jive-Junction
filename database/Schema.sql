@@ -6,7 +6,7 @@
 CREATE TABLE "Orders" (
     "Order_ID" VARCHAR(30)   NOT NULL,
     "Order_Date" DATE   NOT NULL,
-    "Customer_ID" VARCHAR(50)   NOT NULL,
+    "Customer_ID" VARCHAR(100)   NOT NULL,
     CONSTRAINT "pk_Orders" PRIMARY KEY (
         "Order_ID"
      )
@@ -24,9 +24,9 @@ CREATE TABLE "Order_Items" (
 );
 
 CREATE TABLE "Products" (
-    "Product_ID" VARCHAR(20)   NOT NULL,
-    "Coffee_Type" CHAR(10)   NOT NULL,
-    "Roast_Type" CHAR(5)   NOT NULL,
+    "Product_ID" VARCHAR(30)   NOT NULL,
+    "Coffee_Type" CHAR(3)   NOT NULL,
+    "Roast_Type" CHAR(1)   NOT NULL,
     "Size" FLOAT(5)   NOT NULL,
     "Unit_Price" FLOAT(20)   NOT NULL,
     "Price_per_100GRM" FLOAT(20)   NOT NULL,
