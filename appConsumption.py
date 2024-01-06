@@ -47,13 +47,26 @@ class Products(db.Model):
         return {column.name: getattr(self, column.name) for column in self.__table__.columns}
 
 
+# Define the Order model
 class Order(db.Model):
     __tablename__ = 'orders'
-    order_id = db.Column(db.String(15), primary_key=True)
+
+    order_id = db.Column(db.String(30), primary_key=True)
     order_date = db.Column(db.Date, default=datetime.utcnow)
-    customer_id = db.Column(db.String(20), db.ForeignKey('customers.customer_id'), nullable=False)
-    product_id = db.Column(db.String(10), db.ForeignKey('products.product_id'), nullable=False)
+    customer_id = db.Column(db.String(50), db.ForeignKey('customers.customer_id'), nullable=False)
+
+# Define the Order_Items model
+class Order_Items(db.Model):
+    __tablename__ = 'order_items'
+
+    order_id = db.Column(db.String(30), db.ForeignKey('orders.order_id'), primary_key=True)
+    product_id = db.Column(db.String(30), db.ForeignKey('products.product_id'), primary_key=True)
+    unit_price = db.Column(db.Float(20))
     quantity = db.Column(db.Float)
+    sale_amount = db.Column(db.Float(30))
+
+    order = db.relationship('Order', backref='order_items')
+    product = db.relationship('Products', backref='order_items')
 
     __table_args__ = (
         db.UniqueConstraint('order_id', 'product_id', name='unique_order_product'),
@@ -65,7 +78,8 @@ def get_country():
     with app.app_context():
         data = db.session.query(Customers.country).\
         join(Order, Customers.customer_id == Order.customer_id).\
-        join(Products, Order.product_id == Products.product_id).distinct().all()
+        join(Order_Items, Order_Items.order_id == Order.order_id).\
+        join(Products, Order_Items.product_id == Products.product_id).distinct().all()
 
         result = []
         for row in data:
@@ -80,7 +94,8 @@ def get_coffee_country():
     with app.app_context():
         data = db.session.query(Customers.country, Products.coffee_type).\
         join(Order, Customers.customer_id == Order.customer_id).\
-        join(Products, Order.product_id == Products.product_id).distinct().all()
+        join(Order_Items, Order_Items.order_id == Order.order_id).\
+        join(Products, Order_Items.product_id == Products.product_id).distinct().all()
 
         result = []
         for row in data:
@@ -96,7 +111,8 @@ def get_coffee_year():
     with app.app_context():
         data = db.session.query(Customers.country, db.func.extract('year', Order.order_date).label('order_year')).\
         join(Order, Customers.customer_id == Order.customer_id).\
-        join(Products, Order.product_id == Products.product_id).distinct().all()
+        join(Order_Items, Order_Items.order_id == Order.order_id).\
+        join(Products, Order_Items.product_id == Products.product_id).distinct().all()
 
         result = []
         for row in data:
@@ -110,8 +126,10 @@ def get_coffee_year():
 @app.route('/get_order_City_CoffeeType')
 def get_order_City_CoffeeType():
     with app.app_context():
-        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, Products.coffee_type, db.func.extract('year', Order.order_date).label('order_year'),db.func.sum(Order.quantity*Products.size)). \
-            join(Customers).join(Products).group_by(Customers.city,Customers.country,Customers.postal_code,Products.coffee_type,'order_year').all()
+        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, Products.coffee_type, db.func.extract('year', Order.order_date).label('order_year'),db.func.sum(Order_Items.quantity*Products.size)). \
+        join(Order, Customers.customer_id == Order.customer_id).\
+        join(Order_Items, Order_Items.order_id == Order.order_id).\
+        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city,Customers.country,Customers.postal_code,Products.coffee_type,'order_year').all()
 
         result = []
         for row in data:
@@ -130,8 +148,10 @@ def get_order_City_CoffeeType():
 @app.route('/get_order_City_ByYear')
 def get_order_City_ByYear():
     with app.app_context():
-        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, db.func.extract('year', Order.order_date).label('order_year'), db.func.sum(Order.quantity*Products.size)). \
-            join(Customers).join(Products).group_by(Customers.city, Customers.country,Customers.postal_code,'order_year').all()
+        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, db.func.extract('year', Order.order_date).label('order_year'), db.func.sum(Order_Items.quantity*Products.size)). \
+        join(Order, Customers.customer_id == Order.customer_id).\
+        join(Order_Items, Order_Items.order_id == Order.order_id).\
+        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postal_code,'order_year').all()
 
         result = []
         for row in data:
@@ -149,8 +169,10 @@ def get_order_City_ByYear():
 @app.route('/get_order_City_ByCoffeType')
 def get_order_City_ByCoffeType():
     with app.app_context():
-        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, Products.coffee_type, db.func.sum(Order.quantity*Products.size)). \
-            join(Customers).join(Products).group_by(Customers.city, Customers.country,Customers.postal_code, Products.coffee_type).all()
+        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, Products.coffee_type, db.func.sum(Order_Items.quantity*Products.size)). \
+        join(Order, Customers.customer_id == Order.customer_id).\
+        join(Order_Items, Order_Items.order_id == Order.order_id).\
+        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postal_code, Products.coffee_type).all()
 
         result = []
         for row in data:
@@ -168,8 +190,10 @@ def get_order_City_ByCoffeType():
 @app.route('/get_order_City')
 def get_order_City():
     with app.app_context():
-        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, db.func.sum(Order.quantity*Products.size)). \
-            join(Customers).join(Products).group_by(Customers.city, Customers.country,Customers.postal_code).all()
+        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, db.func.sum(Order_Items.quantity*Products.size)). \
+        join(Order, Customers.customer_id == Order.customer_id).\
+        join(Order_Items, Order_Items.order_id == Order.order_id).\
+        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postal_code).all()
 
         result = []
         for row in data:
