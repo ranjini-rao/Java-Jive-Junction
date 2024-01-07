@@ -16,11 +16,11 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Configure the database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@localhost:5432/Coffee_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:pallavi@localhost:5432/Coffee_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Database connection
-alchemyEngine = create_engine('postgresql://username:password@localhost:5432/Coffee_db', pool_size=20, max_overflow=0);
+alchemyEngine = create_engine('postgresql://postgres:pallavi@localhost:5432/Coffee_db', pool_size=20, max_overflow=0);
 
 # reflect an existing database into a new model
 base = automap_base()
@@ -51,7 +51,7 @@ class Customers (db.Model):
     address_line_1 = db.Column(db.String(256))
     city = db.Column(db.String(128))
     country =db.Column(db.String(126))
-    postcode = db.Column(db.String(10))
+    postal_code = db.Column(db.String(20))
     loyalty_card = db.Column(db.String(20))
     orders = db.relationship('Order', backref='customer', lazy=True)
 
