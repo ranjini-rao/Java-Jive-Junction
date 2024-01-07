@@ -29,6 +29,9 @@ Add details
 * **Coffee Sales HTML**
   * *HTML:* [CoffeeSales.html](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/CoffeeSales.html)
   * *JS:* [js/salesLogic.js](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/js/salesLogic.js)
+* **Coffee Import/Export HTML**
+  * *HTML:* [coffeeImportExport.html](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/coffeeImportExport.html)
+  * *JS:* [js/importexportlogic.js](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/js/importexportlogic.js)  
  
 ### Api files
 * **Flash python file:** [app.py](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/app.py)
@@ -53,7 +56,9 @@ CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/v
 Add details
 
 ### Coffee import/export per country
-Add details
+This visualization shows 2 different typoe of analysis for countries selected, 1st one is import analysis, and 2nd one is export analysis.
+* Import visualization shows per country Coffee Import over years. A user can select country from the drop down and it will show the import volumn over years from 1990 till 2019 in a line graph, like a time series data. By this we can understand how the import pattern changed for the specific country. 
+* Export visualization also provides Coffee Export over years. Similar to import data, user can select the export country, and the line chart time series data will show how the pattern for export changed for the country selected. By this we can understad how the export pattern changed for the country over years.
 
 ### Coffee Trade and Usage statistics
 This visualization shows per year statistics for Coffee Import, Export, Production and Domestic Consumption. A user can select year (1990-2019) and category (Import, Export, Production and Consumption) from the drop down and it will show following two statistics:
