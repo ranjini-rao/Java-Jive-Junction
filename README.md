@@ -10,9 +10,7 @@ Add details
 * Pallavi Tripathi
 
 ## Project Architecture:
-
-  <img width="536" alt="image" src="https://github.com/ranjini-rao/Java-Jive-Junction/assets/81578500/a2d0025f-0bb4-4075-b36a-d206abc16658">
-
+<img width="645" alt="Screenshot 2024-01-07 at 3 38 24 PM" src="https://github.com/ranjini-rao/Java-Jive-Junction/assets/139268721/87cda83c-b757-47fe-8eb8-8ddc128f6e5c">
 
 ## Important files and location
 ### Front end files
