@@ -9,6 +9,11 @@ Add details
 * Reetu Jakhar
 * Pallavi Tripathi
 
+## Project Architecture:
+
+  <img width="536" alt="image" src="https://github.com/ranjini-rao/Java-Jive-Junction/assets/81578500/a2d0025f-0bb4-4075-b36a-d206abc16658">
+
+
 ## Important files and location
 ### Front end files
 * **Main HTML:** [index.html](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/index.html)
@@ -40,7 +45,8 @@ CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/v
 
 ### Libraries used
 * World map 3rd party lib: [js/jquery-jvectormap-2.0.5.min.js](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/js/jquery-jvectormap-2.0.5.min.js), [js/jquery-jvectormap-world-mill.js](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/js/jquery-jvectormap-world-mill.js)
-
+* c3.js
+  
 ## Visualizations
 
 ### Coffee Consumption
@@ -64,6 +70,9 @@ Add details
 ## Steps to setup and run the project
 * Use the database schema files listed above to create the database schema in postgres.
 * Use the data input files in csv to populate the database.
+* To install the required libraries run the following commands
+   * pip install Flask Flask_SQLAlchemy
+   * pip install flask-cors
 * Edit the api file (app.py) with postgres username and password at line 19 and 23 to enable api to access the database.
 * Run the command `python app.py` to start the localhost server for the api access. The api will get hosted locally at `http://127.0.0.1:5000/`
 * open the index.html file to access the website.
