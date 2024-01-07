@@ -29,26 +29,32 @@ Add details
 * **Flash python file:** [app.py](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/app.py)
 
 ### Database schema files
-Add
+* [database/Coffee_dataset.sql](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/database/Coffee_dataset.sql)
+* [database/Schema_new_name.sql](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/database/Schema_new_name.sql)
 
 ### Database input files
-Add
+CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/vinaya_branch/database) folder.
 
-## Coffee Consumption
+### Style files
+[CSS](https://github.com/ranjini-rao/Java-Jive-Junction/tree/vinaya_branch/CSS)
+
+## Visualizations
+
+### Coffee Consumption
 Add details
 
-## Coffee import/export per country
+### Coffee import/export per country
 Add details
 
-## Coffee Trade and Usage statistics
+### Coffee Trade and Usage statistics
 This visualization shows per year statistics for Coffee Import, Export, Production and Domestic Consumption. A user can select year (1990-2019) and category (Import, Export, Production and Consumption) from the drop down and it will show following two statistics:
 * Top 10 countries for that year in the given category. This is a bar graph type of chart.
 * World wide map view of data in the given category. For example, if 2019 year and Import is selected, the map will show world wide imports with color shades, dark color means more import and light color means lesser import.
 
-## Coffee pricing
+### Coffee pricing
 Add details
 
-## Coffee sales
+### Coffee sales
 Add details
 
 
