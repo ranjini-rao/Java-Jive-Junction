@@ -38,6 +38,9 @@ CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/v
 ### Style files
 [CSS](https://github.com/ranjini-rao/Java-Jive-Junction/tree/vinaya_branch/CSS)
 
+### Libraries used
+* World map 3rd party lib: [js/jquery-jvectormap-2.0.5.min.js](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/js/jquery-jvectormap-2.0.5.min.js), [js/jquery-jvectormap-world-mill.js](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/js/jquery-jvectormap-world-mill.js)
+
 ## Visualizations
 
 ### Coffee Consumption
