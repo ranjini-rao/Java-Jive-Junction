@@ -166,7 +166,7 @@ function updateMap() {
 
                     //if (dataResp[i].country === "United States") {
                         //console.log('entry from dataResp[i]-1:', dataResp[i]);
-                        if (isEmpty(coffeeTypeFilter) || dataResp[i].country === coffeeCountryFilter) {
+                        if (isEmpty(coffeeCountryFilter) || dataResp[i].country === coffeeCountryFilter) {
                         datacoffee.push({ City: dataResp[i].city, ProductionYear: dataResp[i].order_year, Country: dataResp[i].country, ZipCode: dataResp[i].zipcode, Quantity: dataResp[i].quantity, CoffeeName: dataResp[i].coffee_type });
                         }
                     //}
