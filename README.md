@@ -61,7 +61,7 @@ This visualization shows per year statistics for Coffee Import, Export, Producti
 * World wide map view of data in the given category. For example, if 2019 year and Import is selected, the map will show world wide imports with color shades, dark color means more import and light color means lesser import.
 
 ### Coffee pricing
-Add details
+The coffee price visualization provides the pricing information for the 4 types of cofee beans by their roast types.For the selected coffee type and the roast type, prices are displayed for the 4 different package sizes. The price comaprison visualization shows the comparison of prices of coffee types and their roast types.
 
 ### Coffee sales
 Add details
