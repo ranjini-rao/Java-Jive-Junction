@@ -68,7 +68,7 @@ function barPlot(sel_coffee_type,sel_roast_type){
   // Define x-values and y-values for he plot
   var xValues = size;
   var yValues = price;
-  var fixedYTicks = [0, 5, 10, 15, 20, 25, 30];
+  var fixedYTicks = [0, 5, 10, 15, 20, 25, 30,35];
  
   // Create a bar chart using C3.js
   var chart = c3.generate({
@@ -94,6 +94,7 @@ function barPlot(sel_coffee_type,sel_roast_type){
 
     y: {
       label: 'Price',
+      max:35,
       tick: {
         values: fixedYTicks 
       }
