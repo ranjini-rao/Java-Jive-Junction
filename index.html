@@ -43,6 +43,8 @@
           <a href="CoffeeConsumption.html">Coffee Consumption</a>
           <a href="coffeeImportExport.html">Country's coffee Import & Export</a>
           <a href="coffeeTradeUsageStats.html">Coffee Trade and Usage statistics</a>
+          <a href="CoffeePrice.html">Coffee Price</a>
+          <a href="CoffeeSales.html">Coffee Sales</a>
       </div>
   </div>
 </nav>
@@ -66,16 +68,14 @@
   <p>Check out visualizations for Coffee Import, Export, Production and Consumption statistics for a selected year (from 1990-2019). We show top 10 countries and worldwide distribution in each of these categories.</p>
 </div>
 
-<div class="box">
-  <h2>Box 4</h2>
-  <p>This is the content of Box 4.</p>
-  <a href="https://www.example.com" target="_blank">Link to Example.com</a>
+<div class="box" onclick="coffeePrice()">
+  <h2>Coffee Pricing</h2>
+  <p>Get pricing information of various coffee bean varieties by their roast types.Visualize the comparison between the prices.</p>
 </div>
 
-<div class="box">
-  <h2>Box 5</h2>
-  <p>This is the content of Box 5.</p>
-  <a href="https://www.example.com" target="_blank">Link to Example.com</a>
+<div class="box" onclick="coffeeSales()">
+  <h2>Coffee Sales</h2>
+  <p>Get the sales information of various coffee bean varieties for the years 2019 to 2022.Visualize the profits contributed by each of the varieties.</p>
 </div>
 </div>
 <script>
@@ -87,8 +87,13 @@
        window.open("coffeeImportExport.html", "_self");
     }
 
-    function coffeeQuality() {
-       window.open("Coffee-quality.html", "_self");
+    function coffeePrice() {
+       window.open("CoffeePrice.html", "_self");
+    }
+
+    
+    function coffeeSales() {
+       window.open("CoffeeSales.html", "_self");
     }
 
     function coffeeConsumption() {
