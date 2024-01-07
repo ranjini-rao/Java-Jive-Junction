@@ -5,9 +5,9 @@ Add details
 * Bryson Wersonske
 * Madhavi Pandey
 * Vinaya Kusuma
-* Pallavi Tripathi
 * Ranjini Rao
 * Reetu Jakhar
+* Pallavi Tripathi
 
 ## Important files and location
 ### Front end files
