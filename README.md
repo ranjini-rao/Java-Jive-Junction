@@ -81,4 +81,4 @@ Add details
 * Run the command `python app.py` to start the localhost server for the api access. The api will get hosted locally at `http://127.0.0.1:5000/`
 * open the index.html file to access the website.
 
-*Note: the step 4 may fail for a few times due to absence of dependencies in your system. Please note the error and install appropriate dependencies and try again.*
+*Note: The step 4 may fail for a few times due to absence of dependencies in your system. Please note the error and install appropriate dependencies and try again.*
