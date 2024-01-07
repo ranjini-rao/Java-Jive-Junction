@@ -16,11 +16,11 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Configure the database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:pallavi@localhost:5432/Coffee_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@localhost:5432/Coffee_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Database connection
-alchemyEngine = create_engine('postgresql://postgres:pallavi@localhost:5432/Coffee_db', pool_size=20, max_overflow=0);
+alchemyEngine = create_engine('postgresql://username:password@localhost:5432/Coffee_db', pool_size=20, max_overflow=0);
 
 # reflect an existing database into a new model
 base = automap_base()
@@ -51,7 +51,7 @@ class Customers (db.Model):
     address_line_1 = db.Column(db.String(256))
     city = db.Column(db.String(128))
     country =db.Column(db.String(126))
-    postal_code = db.Column(db.String(20))
+    postcode = db.Column(db.String(10))
     loyalty_card = db.Column(db.String(20))
     orders = db.relationship('Order', backref='customer', lazy=True)
 
@@ -125,7 +125,7 @@ filter(Customers.country == 'United States').all()
                 'customer_email': row[4],
                 'city':row[5],
                 'country': row[6],
-                'postal_code': row[7],
+                'postcode': row[7],
                 'loyalty_card' : row[8],
                 'coffee_type': row[9],
                 'roast_type': row[10],
@@ -193,10 +193,10 @@ def get_coffee_year():
 @app.route('/get_order_City_CoffeeType')
 def get_order_City_CoffeeType():
     with app.app_context():
-        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, Products.coffee_type, db.func.extract('year', Order.order_date).label('order_year'),db.func.sum(Order_Items.quantity*Products.size)). \
+        data = db.session.query(Customers.city, Customers.country, Customers.postcode, Products.coffee_type, db.func.extract('year', Order.order_date).label('order_year'),db.func.sum(Order_Items.quantity*Products.size)). \
         join(Order, Customers.customer_id == Order.customer_id).\
         join(Order_Items, Order_Items.order_id == Order.order_id).\
-        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city,Customers.country,Customers.postal_code,Products.coffee_type,'order_year').all()
+        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city,Customers.country,Customers.postcode,Products.coffee_type,'order_year').all()
 
         result = []
         for row in data:
@@ -215,10 +215,10 @@ def get_order_City_CoffeeType():
 @app.route('/get_order_City_ByYear')
 def get_order_City_ByYear():
     with app.app_context():
-        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, db.func.extract('year', Order.order_date).label('order_year'), db.func.sum(Order_Items.quantity*Products.size)). \
+        data = db.session.query(Customers.city, Customers.country, Customers.postcode, db.func.extract('year', Order.order_date).label('order_year'), db.func.sum(Order_Items.quantity*Products.size)). \
         join(Order, Customers.customer_id == Order.customer_id).\
         join(Order_Items, Order_Items.order_id == Order.order_id).\
-        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postal_code,'order_year').all()
+        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postcode,'order_year').all()
 
         result = []
         for row in data:
@@ -236,10 +236,10 @@ def get_order_City_ByYear():
 @app.route('/get_order_City_ByCoffeType')
 def get_order_City_ByCoffeType():
     with app.app_context():
-        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, Products.coffee_type, db.func.sum(Order_Items.quantity*Products.size)). \
+        data = db.session.query(Customers.city, Customers.country, Customers.postcode, Products.coffee_type, db.func.sum(Order_Items.quantity*Products.size)). \
         join(Order, Customers.customer_id == Order.customer_id).\
         join(Order_Items, Order_Items.order_id == Order.order_id).\
-        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postal_code, Products.coffee_type).all()
+        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postcode, Products.coffee_type).all()
 
         result = []
         for row in data:
@@ -257,10 +257,10 @@ def get_order_City_ByCoffeType():
 @app.route('/get_order_City')
 def get_order_City():
     with app.app_context():
-        data = db.session.query(Customers.city, Customers.country, Customers.postal_code, db.func.sum(Order_Items.quantity*Products.size)). \
+        data = db.session.query(Customers.city, Customers.country, Customers.postcode, db.func.sum(Order_Items.quantity*Products.size)). \
         join(Order, Customers.customer_id == Order.customer_id).\
         join(Order_Items, Order_Items.order_id == Order.order_id).\
-        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postal_code).all()
+        join(Products, Order_Items.product_id == Products.product_id).group_by(Customers.city, Customers.country,Customers.postcode).all()
 
         result = []
         for row in data:
