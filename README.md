@@ -59,4 +59,10 @@ Add details
 
 
 ## Steps to setup and run the project
-Add details
+* Use the database schema files listed above to create the database schema in postgres.
+* Use the data input files in csv to populate the database.
+* Edit the api file (app.py) with postgres username and password at line 19 and 23 to enable api to access the database.
+* Run the command `python app.py` to start the localhost server for the api access. The api will get hosted locally at `http://127.0.0.1:5000/`
+* open the index.html file to access the website.
+
+*Note: the step 4 may fail for a few times due to absence of dependencies in your system. Please note the error and install appropriate dependencies and try again.*
