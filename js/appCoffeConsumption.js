@@ -162,7 +162,7 @@ function updateMap() {
             console.log('Data from Flask API:', dataResp);
             const datacoffee = [];
             for (i = 0; i < dataResp.length; i++) {
-                if (i < 5) {
+                if (i < 50) {
 
                     //if (dataResp[i].country === "United States") {
                         //console.log('entry from dataResp[i]-1:', dataResp[i]);
