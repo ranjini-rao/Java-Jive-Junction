@@ -5,6 +5,9 @@ Add details
 * Bryson Wersonske
 * Madhavi Pandey
 * Vinaya Kusuma
+   * created flask api to get prices and sales information from the Postgres database.
+   * created the `cofeePrice.html`, `logic.js` files to provide visually engaging pricing information charts from the data fetched from the flask api.
+   * used the c3.js Javascript library to build interactive visualizations.
 * Ranjini Rao
 * Reetu Jakhar
 * Pallavi Tripathi
