@@ -10,6 +10,10 @@ Add details
    * Created the `cofeePrice.html`, `logic.js` files to provide visually engaging pricing information charts from the data fetched from the flask api.
    * Used the c3.js Javascript library to build interactive visualizations.
 * Ranjini Rao
+  * Created Postgres database and ERD diagram `database/Schema_new_name.sql`
+  * Worked on `coffeeSales.html` and `saleslogic.js` for obtaining the coffee sales information for the visualization
+  * Worked on the Pie and line graphs interactive visualizations
+  * Created PPT for the project presentation
 * Reetu Jakhar
    * Created the Home page ( `index.html` ) for website application and designed it using box containers to show the information for end users. Created custom css functions for this page (`style.css`)
    * Developed flask API to get coffee order data by year, country and coffee type. All flask API functions are in appconsumption.py file.
