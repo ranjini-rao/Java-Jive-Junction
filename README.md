@@ -10,9 +10,9 @@ Add details
    * used the c3.js Javascript library to build interactive visualizations.
 * Ranjini Rao
 * Reetu Jakhar
-   * Created the Home page(index.html) for website application and designed it using box containers to show the information for end users. Created custom css functions for this page (style.css)
+   * Created the Home page ( `index.html` ) for website application and designed it using box containers to show the information for end users. Created custom css functions for this page (`style.css`)
    * Developed flask API to get coffee order data by year, country and coffee type. All flask API functions are in appconsumption.py file.
-   * Created coffeeconsumption.html and appcoffeeconsumption.js file to show dynamic world map and highlight the cities with coffee consumption data based on coffee orders.
+   * Created `CoffeeConsumption.html` and `appCoffeeConsumption.js` file to show dynamic world map and highlight the cities with coffee consumption data based on coffee orders.
    * Used open street maps & open cage api to get lat and lan of cities using zipcode and country. Also used leaflet, d3 and axios.min js libraries for visualization.
 * Pallavi Tripathi
   * created flask apis to get coffee import, export, production and consumption data from the DB. Also, api to get country codes to be used in jVectorMap library.
