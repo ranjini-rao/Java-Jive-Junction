@@ -57,7 +57,7 @@ CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/v
 Add details
 
 ### Coffee import/export per country
-This visualization shows 2 different typoe of analysis for countries selected, 1st one is import analysis, and 2nd one is export analysis.
+This visualization shows 2 different types of analysis for countries selected, 1st one is import analysis, and 2nd one is export analysis.
 * Import visualization shows per country Coffee Import over years. A user can select country from the drop down and it will show the import volumn over years from 1990 till 2019 in a line graph, like a time series data. By this we can understand how the import pattern changed for the specific country. 
 * Export visualization also provides Coffee Export over years. Similar to import data, user can select the export country, and the line chart time series data will show how the pattern for export changed for the country selected. By this we can understad how the export pattern changed for the country over years.
 
@@ -67,10 +67,10 @@ This visualization shows per year statistics for Coffee Import, Export, Producti
 * World wide map view of data in the given category. For example, if 2019 year and Import is selected, the map will show world wide imports with color shades, dark color means more import and light color means lesser import.
 
 ### Coffee pricing
-The coffee price visualization provides the pricing information for the 4 types of cofee beans by their roast types.For the selected coffee type and the roast type, prices are displayed for the 4 different package sizes. The price comaprison visualization shows the comparison of prices of coffee types and their roast types.
+The coffee price visualization provides the pricing information for the 4 types of coffee beans by their roast types. For the selected coffee type and the roast type, prices are displayed for the 4 different package sizes. The price comparison visualization shows the comparison of prices of coffee types and their roast types.
 
 ### Coffee sales
-Add details
+In the coffee sales visualization we look at the four major types of coffee sold from the years 2019 to 2022. The stacked bars show the relative quantities of both total sales amount and total profit amount per year. The results for 2022 have been extrapolated, with a correction for seasonality, since the last sales record was from August 19th, 2022
 
 
 ## Steps to setup and run the project
