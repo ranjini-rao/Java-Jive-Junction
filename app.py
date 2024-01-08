@@ -16,11 +16,11 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Configure the database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5432/Coffee_Dataset_Db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@localhost:5432/Coffee_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Database connection
-alchemyEngine = create_engine('postgresql://postgres:postgres@localhost:5432/Coffee_Dataset_Db', pool_size=20, max_overflow=0);
+alchemyEngine = create_engine('postgresql://username:password@localhost:5432/Coffee_db', pool_size=20, max_overflow=0);
 
 # reflect an existing database into a new model
 base = automap_base()
