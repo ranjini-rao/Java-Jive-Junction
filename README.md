@@ -20,7 +20,7 @@ Add details
    * Created `CoffeeConsumption.html` and `appCoffeeConsumption.js` file to show dynamic world map and highlight the cities with coffee consumption data based on coffee orders.
    * Used open street maps & open cage api to get lat and lan of cities using zipcode and country. Also used leaflet, d3 and axios.min js libraries for visualization.
 * Pallavi Tripathi
-  * Created flask apis to get coffee import, export, production and consumption data from the DB. Also, created api to get country codes to be used in jVectorMap library.
+  * Created flask apis to get coffee import, export, production and consumption data from the DB. Also, created api to get country codes to be used in **jVectorMap** library to display world map.
   * Created `coffeetradeusagestats.js` and `coffeeTradeUsageStats.html` to interact with flask apis created above and show the visualization.
   * Edited `index.html` to include hyperlink for [Coffee Trade and Usage statistics](coffeeTradeUsageStats.html)
   * Merged changes from other team members into one branch.
