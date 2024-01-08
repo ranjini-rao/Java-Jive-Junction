@@ -23,6 +23,7 @@ Add details
   * Created flask apis to get coffee import, export, production and consumption data from the DB. Also, created api to get country codes to be used in jVectorMap library.
   * Created `coffeetradeusagestats.js` and `coffeeTradeUsageStats.html` to interact with flask apis created above and show the visualization.
   * Edited `index.html` to include hyperlink for [Coffee Trade and Usage statistics](coffeeTradeUsageStats.html)
+  * Merged changes from other team members into one branch.
 
 ## Project Architecture:
 <img width="473" alt="image" src="https://github.com/ranjini-rao/Java-Jive-Junction/assets/81578500/64f07f13-6013-4be4-a8ad-47d1fcfb4903">
@@ -60,7 +61,7 @@ CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/v
 [CSS](https://github.com/ranjini-rao/Java-Jive-Junction/tree/vinaya_branch/CSS)
 
 ### Libraries used
-* World map 3rd party lib: [js/jquery-jvectormap-2.0.5.min.js](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/js/jquery-jvectormap-2.0.5.min.js), [js/jquery-jvectormap-world-mill.js](https://github.com/ranjini-rao/Java-Jive-Junction/blob/vinaya_branch/js/jquery-jvectormap-world-mill.js)
+* World map 3rd party lib : https://jvectormap.com/
 * c3.js
   
 ## Visualizations
