@@ -151,7 +151,7 @@ function updateMap() {
     });
 
     // OpenCage Geocoding API Key
-    const apiKey = 'bb226dea3da142138c9617b3a588c5f3';
+    const apiKey = 'bbe9271a536fb9424da1cb8501236b2a49';
     const country = 'US';
     // Helper function to get latitude and longitude from a zipcode using OpenCage API
 
