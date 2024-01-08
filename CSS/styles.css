@@ -1,0 +1,31 @@
+/* styles.css */
+
+body {
+    background-color: #a75415; /* Brown background color */
+    color: #fff; /* Text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0c0a0a; /* Darker brown for header */
+}
+
+section {
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #2b2929; /* Lighter brown for content */
+    border-radius: 5px;
+}
+
+h1, h2 {
+    color: #fff; /* Text color for headings */
+}
+
+p {
+    line-height: 1.6;
+}
