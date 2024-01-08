@@ -1,5 +1,11 @@
 # Java-Jive-Junction
-Add details
+* Our coffee project seeks to provide an insight into the coffee industry in the United States and around the World.
+* We aim to provide the analysis and visualization on global coffee consumption, production, import, export.
+* We analyze the price, sales and profit data for various coffee and their roasts types available in our source dataset.
+
+## Project Architecture:
+<img width="715" alt="image" src="https://github.com/ranjini-rao/Java-Jive-Junction/assets/143301151/5d7275ec-94df-412f-be9e-4fa331ff0aff">
+
 
 ## Team members:
 * Bryson Wersonske
@@ -25,8 +31,6 @@ Add details
   * Edited `index.html` to include hyperlink for [Coffee Trade and Usage statistics](coffeeTradeUsageStats.html)
   * Merged changes from other team members into one branch.
 
-## Project Architecture:
-<img width="473" alt="image" src="https://github.com/ranjini-rao/Java-Jive-Junction/assets/81578500/64f07f13-6013-4be4-a8ad-47d1fcfb4903">
 
 ## Important files and location
 ### Front end files
@@ -67,15 +71,19 @@ CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/v
 
 ### Libraries used
 * World map 3rd party lib : https://jvectormap.com/
-* c3.js
+* d3.js : https://d3js.org/d3.v5.min.js
+* c3.js : https://unpkg.com/c3@0.7.20/c3.min.js
+* leaflet : https://unpkg.com/leaflet/dist/leaflet.js
+* axios.min : https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js
+
   
 ## Visualizations
 
 ### Coffee Consumption
 This visualization shows the amount of coffee consumed in different parts of the world over the past few years.
 Here we can select and see which country consumed the max amount of coffee based on the orders placed for different types of coffee.
-There's filter for selecting different countries, coffee types and years on the top left corner of the page to toggle betwwen different visualizations.
-If we hover and click over the appering city it will show us the amount and type of coffee ordered in that area.
+There's filter for selecting different countries, coffee types and years on the top left corner of the page to toggle between different visualizations.
+If we hover and click over the appearing city it will show us the amount and type of coffee ordered in that area.
 
 ### Coffee import/export per country
 This visualization shows 2 different types of analysis for countries selected, 1st one is import analysis, and 2nd one is export analysis.
@@ -105,3 +113,8 @@ In the coffee sales visualization we look at the four major types of coffee sold
 * open the index.html file to access the website.
 
 *Note: The step 4 may fail for a few times due to absence of dependencies in your system. Please note the error and install appropriate dependencies and try again.*
+
+## Data Ethics: 
+
+* Both datasets used for our project come from Kaggle, and open sourced website. There is no personal identifying information in the our data. Our team double checked the sales data to make sure it is generated, and does not represent real people. No data in the international coffee trade set is sensitive or requires any extra security.
+
