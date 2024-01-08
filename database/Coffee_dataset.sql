@@ -1,0 +1,277 @@
+-- Create the 'countries' table as the parent table
+CREATE TABLE countries (
+    Country_ID SERIAL PRIMARY KEY,
+    Country VARCHAR(255) UNIQUE NOT NULL
+);
+
+-- Create the group of tables that are time series
+-- Each Uses Country as the foreign key to the parent table
+
+-- Because we are populating the tables with data later 
+-- We will use a drop table function as well
+
+DROP TABLE IF EXISTS coffee_consumption;
+
+CREATE TABLE coffee_consumption (
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
+    Coffee_Type VARCHAR(255) NOT NULL,
+    Year_1990 NUMERIC,
+    Year_1991 NUMERIC,
+	Year_1992 NUMERIC,
+    Year_1993 NUMERIC,
+	Year_1994 NUMERIC,
+    Year_1995 NUMERIC,
+	Year_1996 NUMERIC,
+    Year_1997 NUMERIC,
+	Year_1998 NUMERIC,
+    Year_1999 NUMERIC,
+	Year_2000 NUMERIC,
+	Year_2001 NUMERIC,
+	Year_2002 NUMERIC,
+	Year_2003 NUMERIC,
+	Year_2004 NUMERIC,
+	Year_2005 NUMERIC,
+	Year_2006 NUMERIC,
+	Year_2007 NUMERIC,
+	Year_2008 NUMERIC,
+	Year_2009 NUMERIC,
+	Year_2010 NUMERIC,
+	Year_2011 NUMERIC, 
+	Year_2012 NUMERIC,
+	Year_2013 NUMERIC, 
+	Year_2014 NUMERIC,
+	Year_2015 NUMERIC, 
+	Year_2016 NUMERIC,
+	Year_2017 NUMERIC, 
+	Year_2018 NUMERIC,
+	Year_2019 NUMERIC, 
+    Total_Domestic_Consumption NUMERIC
+);
+
+DROP TABLE IF EXISTS coffee_exporters;
+
+CREATE TABLE coffee_exporters (
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
+    Year_1990 NUMERIC,
+    Year_1991 NUMERIC,
+	Year_1992 NUMERIC,
+    Year_1993 NUMERIC,
+	Year_1994 NUMERIC,
+    Year_1995 NUMERIC,
+	Year_1996 NUMERIC,
+    Year_1997 NUMERIC,
+	Year_1998 NUMERIC,
+    Year_1999 NUMERIC,
+	Year_2000 NUMERIC,
+	Year_2001 NUMERIC,
+	Year_2002 NUMERIC,
+	Year_2003 NUMERIC,
+	Year_2004 NUMERIC,
+	Year_2005 NUMERIC,
+	Year_2006 NUMERIC,
+	Year_2007 NUMERIC,
+	Year_2008 NUMERIC,
+	Year_2009 NUMERIC,
+	Year_2010 NUMERIC,
+	Year_2011 NUMERIC, 
+	Year_2012 NUMERIC,
+	Year_2013 NUMERIC, 
+	Year_2014 NUMERIC,
+	Year_2015 NUMERIC, 
+	Year_2016 NUMERIC,
+	Year_2017 NUMERIC, 
+	Year_2018 NUMERIC,
+	Year_2019 NUMERIC, 
+    Total_Exports NUMERIC
+);
+
+DROP TABLE IF EXISTS coffee_green_inventory;
+
+CREATE TABLE coffee_green_inventory (
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
+    Year_1990 NUMERIC,
+    Year_1991 NUMERIC,
+	Year_1992 NUMERIC,
+    Year_1993 NUMERIC,
+	Year_1994 NUMERIC,
+    Year_1995 NUMERIC,
+	Year_1996 NUMERIC,
+    Year_1997 NUMERIC,
+	Year_1998 NUMERIC,
+    Year_1999 NUMERIC,
+	Year_2000 NUMERIC,
+	Year_2001 NUMERIC,
+	Year_2002 NUMERIC,
+	Year_2003 NUMERIC,
+	Year_2004 NUMERIC,
+	Year_2005 NUMERIC,
+	Year_2006 NUMERIC,
+	Year_2007 NUMERIC,
+	Year_2008 NUMERIC,
+	Year_2009 NUMERIC,
+	Year_2010 NUMERIC,
+	Year_2011 NUMERIC, 
+	Year_2012 NUMERIC,
+	Year_2013 NUMERIC, 
+	Year_2014 NUMERIC,
+	Year_2015 NUMERIC, 
+	Year_2016 NUMERIC,
+	Year_2017 NUMERIC, 
+	Year_2018 NUMERIC,
+	Year_2019 NUMERIC, 
+    Total_Inventory NUMERIC
+);
+
+DROP TABLE IF EXISTS coffee_importers;
+
+CREATE TABLE coffee_importers (
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
+    Year_1990 NUMERIC,
+    Year_1991 NUMERIC,
+	Year_1992 NUMERIC,
+    Year_1993 NUMERIC,
+	Year_1994 NUMERIC,
+    Year_1995 NUMERIC,
+	Year_1996 NUMERIC,
+    Year_1997 NUMERIC,
+	Year_1998 NUMERIC,
+    Year_1999 NUMERIC,
+	Year_2000 NUMERIC,
+	Year_2001 NUMERIC,
+	Year_2002 NUMERIC,
+	Year_2003 NUMERIC,
+	Year_2004 NUMERIC,
+	Year_2005 NUMERIC,
+	Year_2006 NUMERIC,
+	Year_2007 NUMERIC,
+	Year_2008 NUMERIC,
+	Year_2009 NUMERIC,
+	Year_2010 NUMERIC,
+	Year_2011 NUMERIC, 
+	Year_2012 NUMERIC,
+	Year_2013 NUMERIC, 
+	Year_2014 NUMERIC,
+	Year_2015 NUMERIC, 
+	Year_2016 NUMERIC,
+	Year_2017 NUMERIC, 
+	Year_2018 NUMERIC,
+	Year_2019 NUMERIC, 
+    Totsl_Imports NUMERIC
+);
+
+DROP TABLE IF EXISTS coffee_importers_consumption;
+
+CREATE TABLE coffee_importers_consumption (
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
+    Year_1990 NUMERIC,
+    Year_1991 NUMERIC,
+	Year_1992 NUMERIC,
+    Year_1993 NUMERIC,
+	Year_1994 NUMERIC,
+    Year_1995 NUMERIC,
+	Year_1996 NUMERIC,
+    Year_1997 NUMERIC,
+	Year_1998 NUMERIC,
+    Year_1999 NUMERIC,
+	Year_2000 NUMERIC,
+	Year_2001 NUMERIC,
+	Year_2002 NUMERIC,
+	Year_2003 NUMERIC,
+	Year_2004 NUMERIC,
+	Year_2005 NUMERIC,
+	Year_2006 NUMERIC,
+	Year_2007 NUMERIC,
+	Year_2008 NUMERIC,
+	Year_2009 NUMERIC,
+	Year_2010 NUMERIC,
+	Year_2011 NUMERIC, 
+	Year_2012 NUMERIC,
+	Year_2013 NUMERIC, 
+	Year_2014 NUMERIC,
+	Year_2015 NUMERIC, 
+	Year_2016 NUMERIC,
+	Year_2017 NUMERIC, 
+	Year_2018 NUMERIC,
+	Year_2019 NUMERIC, 
+    Totsl_Imports_Consumption NUMERIC
+);
+
+DROP TABLE IF EXISTS coffee_production;
+
+CREATE TABLE coffee_production (
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
+    Coffee_Type VARCHAR(255) NOT NULL,
+	Year_1990 NUMERIC,
+    Year_1991 NUMERIC,
+	Year_1992 NUMERIC,
+    Year_1993 NUMERIC,
+	Year_1994 NUMERIC,
+    Year_1995 NUMERIC,
+	Year_1996 NUMERIC,
+    Year_1997 NUMERIC,
+	Year_1998 NUMERIC,
+    Year_1999 NUMERIC,
+	Year_2000 NUMERIC,
+	Year_2001 NUMERIC,
+	Year_2002 NUMERIC,
+	Year_2003 NUMERIC,
+	Year_2004 NUMERIC,
+	Year_2005 NUMERIC,
+	Year_2006 NUMERIC,
+	Year_2007 NUMERIC,
+	Year_2008 NUMERIC,
+	Year_2009 NUMERIC,
+	Year_2010 NUMERIC,
+	Year_2011 NUMERIC, 
+	Year_2012 NUMERIC,
+	Year_2013 NUMERIC, 
+	Year_2014 NUMERIC,
+	Year_2015 NUMERIC, 
+	Year_2016 NUMERIC,
+	Year_2017 NUMERIC, 
+	Year_2018 NUMERIC,
+	Year_2019 NUMERIC, 
+    Totsl_Production NUMERIC
+);
+
+DROP TABLE IF EXISTS coffee_re_exported;
+
+CREATE TABLE coffee_re_exported (
+    Country VARCHAR(255) PRIMARY KEY REFERENCES countries(Country) NOT NULL,
+    Year_1990 NUMERIC,
+    Year_1991 NUMERIC,
+	Year_1992 NUMERIC,
+    Year_1993 NUMERIC,
+	Year_1994 NUMERIC,
+    Year_1995 NUMERIC,
+	Year_1996 NUMERIC,
+    Year_1997 NUMERIC,
+	Year_1998 NUMERIC,
+    Year_1999 NUMERIC,
+	Year_2000 NUMERIC,
+	Year_2001 NUMERIC,
+	Year_2002 NUMERIC,
+	Year_2003 NUMERIC,
+	Year_2004 NUMERIC,
+	Year_2005 NUMERIC,
+	Year_2006 NUMERIC,
+	Year_2007 NUMERIC,
+	Year_2008 NUMERIC,
+	Year_2009 NUMERIC,
+	Year_2010 NUMERIC,
+	Year_2011 NUMERIC, 
+	Year_2012 NUMERIC,
+	Year_2013 NUMERIC, 
+	Year_2014 NUMERIC,
+	Year_2015 NUMERIC, 
+	Year_2016 NUMERIC,
+	Year_2017 NUMERIC, 
+	Year_2018 NUMERIC,
+	Year_2019 NUMERIC, 
+    Totsl_Re_Exported_Coffee NUMERIC
+);
+
+
+
+
+

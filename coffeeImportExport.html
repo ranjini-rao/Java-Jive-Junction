@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coffee Import/Export Analysis</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <header style="text-align: center;">
+    <nav>
+      <a href="index.html">Home</a> 
+    </nav>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style ="background-image: url('https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlJTIwYmVhbnN8ZW58MHx8MHx8fDA%3D');">
+        <h1 style="color: aliceblue;">Coffee Import/Export analysis</h1>
+        <p style = "color: aliceblue;">Use the interactive charts below to explore the coffee dataset for import and expost by counteis over years</p>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="well">
+          <h5>Please select Country to see import data</h5>
+          <select id="selDatasetCountries" onchange="countrySelected(this.value)"></select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <h4>Coffee Import by country time series</h4>
+          <div id="importTimeSeries"></div>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+          <div class="well">
+            <h5>Please select Country to see export data</h5>
+            <select id="selExportCountries" onchange="exportCountrySelected(this.value)"></select>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Coffee Export by country time series</h4>
+            <div id="exportTimeSeries"></div>
+        </div>
+    </div>
+    <div class="row">
+    </div>
+  </div>  
+
+  <script type="text/javascript" src="https://threejs.org/build/three.module.js"></script>
+  <script type="text/javascript" src="https://www.chartjs.org/dist/2.6.0/Chart.bundle.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.9/c3.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/importexportlogic.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Coffee Analysis</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body style="background-color:rgb(237,187,153)">
+<!--  <div class="container">
+    <h1>Coffee Analysis</h1>
+    <img src="images/coffieAnalysis.jpg" alt="Coffee"  class="center" >
+  </div>-->
+
+<script type="text/javascript" src="https://threejs.org/build/three.module.js"></script>
+<script type="text/javascript" src="https://www.chartjs.org/dist/2.6.0/Chart.bundle.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.9/c3.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<header>
+  <h1>JAVA JIVE JUNCTION</h1>
+  <img  id="coffeeImage" src="images/coffee-day.jpg" alt="Header Image">
+</header>
+<script>
+  // Array of image URLs for rotation
+  const images = [
+      'images/coffee-day.jpg',
+      'images/other.jfif',
+      'images/bean-countries.jpg'      
+      
+  ];
+
+  // Set interval to change the image every 5 seconds
+  let currentIndex = 0;
+  setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById('coffeeImage').src = images[currentIndex];
+  }, 5000); // 5000 milliseconds = 5 seconds
+</script>
+<nav>
+  <a href="index.html">Home</a>
+  <div class="dropdown">
+      <a href="#">Go to</a>
+      <div class="dropdown-content">
+          <a href="CoffeeConsumption.html">Coffee Consumption</a>
+          <a href="coffeeImportExport.html">Country's coffee Import & Export</a>
+          <a href="coffeeTradeUsageStats.html">Coffee Trade and Usage statistics</a>
+          <a href="CoffeePrice.html">Coffee Price</a>
+          <a href="CoffeeSales.html">Coffee Sales</a>
+      </div>
+  </div>
+</nav>
+<main>
+  <h2>Discover the World of Coffee with Us</h2>
+  <p>Coffee has plenty of nicknames, but ‘Java’ is one of the most common ones. How did this come to be? Well the term "Java" has become synonymous with coffee due to the historical importance of the island of Java in the early global coffee trade.
+    While it may have originated as a geographic reference, the term has taken on a broader colloquial meaning, representing a connection to the heritage and quality associated with coffee cultivation on the island.
+    In recent years, the global coffee industry has witnessed dynamic shifts in consumption patterns, sales strategies, and international trade trends.
+    Coffee, one of the world's most beloved beverages, has become a significant player in the global economy, with diverse regions contributing to its cultivation, consumption, and trade.
+    This brief introduction provides an overview of the prevailing trends in coffee consumption, sales, and import-export dynamics.
+    At JAVA JIVE JUNCTION, we're your go-to source for comprehensive insights into the dynamic world of coffee consumption, sales, and international trade.
+    Whether you're a coffee industry professional, an enthusiast, or just curious about the trends shaping the coffee market, you're in the right place.Explore Our Key Sections:</p>
+</main>
+<div class="boxes-row">
+<div class="box" onclick="coffeeConsumption()">
+  <h2>Coffee Consumption</h2>
+  <p>Explore the consumption of different types of coffee in different countries over the past few years</p>
+</div>
+
+<div class="box" onclick="coffeeImportExport()">
+  <h2>Country's coffee Import & Export</h2>
+  <p>See the Import and export of coffee by countires over years.</p>
+</div>
+
+<div class="box" onclick="openCoffeeTradeUsageStats()">
+  <h2>Coffee Trade and Usage statistics</h2>
+  <p>Check out visualizations for Coffee Import, Export, Production and Domestic Consumption statistics for a selected year (from 1990-2019). It shows top 10 countries in the selected year and category. Also, it shows worldwide view for the selected category in the given year.</p>
+</div>
+
+<div class="box" onclick="coffeePrice()">
+  <h2>Coffee Pricing</h2>
+  <p>Get pricing information of various coffee bean varieties by their roast types. Visualize the comparison between the prices.</p>
+</div>
+
+<div class="box" onclick="coffeeSales()">
+  <h2>Coffee Sales</h2>
+  <p>Get the sales information of various coffee bean varieties for the years 2019 to 2022. Visualize the profits contributed by each of the varieties.</p>
+</div>
+</div>
+<script>
+    function openCoffeeTradeUsageStats() {
+       window.open("coffeeTradeUsageStats.html", "_self");
+    }
+
+    function coffeeImportExport() {
+       window.open("coffeeImportExport.html", "_self");
+    }
+
+    function coffeePrice() {
+       window.open("CoffeePrice.html", "_self");
+    }
+
+    
+    function coffeeSales() {
+       window.open("CoffeeSales.html", "_self");
+    }
+
+    function coffeeConsumption() {
+       window.open("CoffeeConsumption.html", "_self");
+    }   
+</script>
+</body>
+</html>

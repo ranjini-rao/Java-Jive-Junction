@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Orders Data</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        nav a:hover, .dropdown-content a:hover {
+            background-color: #d89d512a;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        #header {
+            background-image: url('https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29mZmVlJTIwYmVhbnN8ZW58MHx8MHx8fDA%3D'); /* Replace with the actual background image URL */
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        #map {
+            height: 100vh;
+        }
+
+        #filters {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header style="text-align: center;">
+        <nav>
+          <a href="index.html">Home</a> 
+      </nav>
+      </header>
+          <div id="header">
+            <h1>Coffee Orders</h1>
+            <p style = "color: aliceblue;">Use the interactive charts below to explore coffee consumption based on coffee orders</p>            
+        </div>
+    <div id="filters">
+        <label for="coffeeType">Countries:</label>
+        <select id="selDataset3" onchange="updateMap()"></select>        
+        <br>  
+        <br>         
+        <label for="coffeeType">Coffee Type:</label>
+        <select id="selDataset1" onchange="updateMap()"></select>        
+        <br>
+        <br>
+        <label for="productionYear">Year:</label>
+        <select id="selDataset2" onchange="updateMap()"></select>   
+    </div>
+<br>
+    <div id="map"></div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/appCoffeConsumption.js"></script>     
+
+</body>
+</html>
