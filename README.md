@@ -72,7 +72,10 @@ CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/v
 ## Visualizations
 
 ### Coffee Consumption
-Add details
+This visualization shows the amount of coffee consumed in different parts of the world over the past few years.
+Here we can select and see which country consumed the max amount of coffee based on the orders placed for different types of coffee.
+There's filter for selecting different countries, coffee types and years on the top left corner of the page to toggle betwwen different visualizations.
+If we hover and click over the appering city it will show us the amount and type of coffee ordered in that area.
 
 ### Coffee import/export per country
 This visualization shows 2 different types of analysis for countries selected, 1st one is import analysis, and 2nd one is export analysis.
