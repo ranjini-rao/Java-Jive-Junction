@@ -5,6 +5,7 @@ Add details
 * Bryson Wersonske
 * Madhavi Pandey
 * Vinaya Kusuma
+   * Constructed the workflow for the web application.  
    * Created flask api to get prices and sales information from the Postgres database.
    * Created the `cofeePrice.html`, `logic.js` files to provide visually engaging pricing information charts from the data fetched from the flask api.
    * Used the c3.js Javascript library to build interactive visualizations.
