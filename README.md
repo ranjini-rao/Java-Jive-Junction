@@ -5,9 +5,9 @@ Add details
 * Bryson Wersonske
 * Madhavi Pandey
 * Vinaya Kusuma
-   * created flask api to get prices and sales information from the Postgres database.
-   * created the `cofeePrice.html`, `logic.js` files to provide visually engaging pricing information charts from the data fetched from the flask api.
-   * used the c3.js Javascript library to build interactive visualizations.
+   * Created flask api to get prices and sales information from the Postgres database.
+   * Created the `cofeePrice.html`, `logic.js` files to provide visually engaging pricing information charts from the data fetched from the flask api.
+   * Used the c3.js Javascript library to build interactive visualizations.
 * Ranjini Rao
 * Reetu Jakhar
    * Created the Home page ( `index.html` ) for website application and designed it using box containers to show the information for end users. Created custom css functions for this page (`style.css`)
@@ -15,9 +15,9 @@ Add details
    * Created `CoffeeConsumption.html` and `appCoffeeConsumption.js` file to show dynamic world map and highlight the cities with coffee consumption data based on coffee orders.
    * Used open street maps & open cage api to get lat and lan of cities using zipcode and country. Also used leaflet, d3 and axios.min js libraries for visualization.
 * Pallavi Tripathi
-  * created flask apis to get coffee import, export, production and consumption data from the DB. Also, api to get country codes to be used in jVectorMap library.
-  * created `coffeetradeusagestats.js` and `coffeeTradeUsageStats.html` to interact with flask apis created above and show the visualization.
-  * edited `index.html` to include hyperlink for [Coffee Trade and Usage statistics](coffeeTradeUsageStats.html)
+  * Created flask apis to get coffee import, export, production and consumption data from the DB. Also, created api to get country codes to be used in jVectorMap library.
+  * Created `coffeetradeusagestats.js` and `coffeeTradeUsageStats.html` to interact with flask apis created above and show the visualization.
+  * Edited `index.html` to include hyperlink for [Coffee Trade and Usage statistics](coffeeTradeUsageStats.html)
 
 ## Project Architecture:
 <img width="473" alt="image" src="https://github.com/ranjini-rao/Java-Jive-Junction/assets/81578500/64f07f13-6013-4be4-a8ad-47d1fcfb4903">
