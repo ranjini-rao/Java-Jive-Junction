@@ -57,6 +57,11 @@ Add details
 ### Database input files
 CSV files in [database](https://github.com/ranjini-rao/Java-Jive-Junction/tree/vinaya_branch/database) folder.
 
+### Database original source
+* https://www.kaggle.com/datasets/michals22/coffee-dataset
+
+* https://www.kaggle.com/datasets/saadharoon27/coffee-bean-sales-raw-dataset/data
+
 ### Style files
 [CSS](https://github.com/ranjini-rao/Java-Jive-Junction/tree/vinaya_branch/CSS)
 
