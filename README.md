@@ -8,10 +8,12 @@ Add details
 * Ranjini Rao
 * Reetu Jakhar
 * Pallavi Tripathi
+  * created flask apis to get coffee import, export, production and consumption data from the DB. Also, api to get country codes to be used in jVectorMap library.
+  * created `coffeetradeusagestats.js` and `coffeeTradeUsageStats.html` to interact with flask apis created above and show the visualization.
+  * edited `index.html` to include hyperlink for [Coffee Trade and Usage statistics](coffeeTradeUsageStats.html)
 
 ## Project Architecture:
 <img width="473" alt="image" src="https://github.com/ranjini-rao/Java-Jive-Junction/assets/81578500/64f07f13-6013-4be4-a8ad-47d1fcfb4903">
-
 
 ## Important files and location
 ### Front end files
